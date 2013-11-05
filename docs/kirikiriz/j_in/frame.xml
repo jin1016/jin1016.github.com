@@ -11,9 +11,6 @@
 <link href="Startup"/><r/>
 <link href="CommandLine"/><r/>
 <r/>
-<link href="Controller"/><r/>
-<link href="ScriptEditor"/><r/>
-<link href="ExprWatch"/><r/>
 <link href="Console"/><r/>
 <r/>
 <link href="StorageSystem"/><r/>
@@ -26,8 +23,6 @@
 <link href="Debug"/><r/>
 <r/>
 <link href="Files"/><r/>
-<r/>
-<link href="HotKeys"/><r/>
 <r/>
 <link href="ComputerDependentProblems"/><r/>
 </para>

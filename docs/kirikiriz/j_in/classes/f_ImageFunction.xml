@@ -142,8 +142,8 @@
 				<tt><kw>omLighten</kw></tt> が指定された場合は比較(明)合成が行われます(現バージョンでは未実装です)。<r/>
 				<tt><kw>omScreen</kw></tt> が指定された場合はスクリーン乗算合成が行われます(現バージョンでは未実装です)。<r/>
 				<tt><kw>omAlpha</kw></tt> が指定された場合はアルファ合成が行われます。<r/>
-				<tt><kw>omAddAlpha</kw></tt> が指定された場合は加算アルファ合成が行われます。この場合は、転送先の <ref>Layer.face</ref> プロパティが dfOpaque かつ <ref>Layer.holdAlpha</ref> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
-				<tt><kw>omOpaque</kw></tt> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。この場合は、転送先の <ref>Layer.face</ref> プロパティが dfOpaque かつ <ref>Layer.holdAlpha</ref> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
+				<tt><kw>omAddAlpha</kw></tt> が指定された場合は加算アルファ合成が行われます。この場合は、face が dfOpaque かつ hda が偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
+				<tt><kw>omOpaque</kw></tt> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。この場合は、face が dfOpaque かつ hda が偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -153,7 +153,7 @@
 				　描画方式を指定します。<r/>
 				<tt><kw>dfAlpha</kw></tt> が指定された場合は画像はアルファチャンネルつき画像と見なされ、描画されます。<r/>
 				<tt><kw>dfAddAlpha</kw></tt> が指定された場合は画像は加算アルファチャンネルつき画像として見なされ、描画されます。<r/>
-				<tt><kw>dfOpaque</kw></tt> が指定された場合はレイヤの画像はすべて完全不透明であると見なされ、描画されます。<r/>
+				<tt><kw>dfOpaque</kw></tt> が指定された場合は画像はすべて完全不透明であると見なされ、描画されます。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -191,8 +191,7 @@
 	</arg>
 	<result></result>
 	<desc>
-		　指定された重ね合わせ元レイヤの矩形を、重ね合わせ先 ( メソッドを実行するレイヤ ) に
-		アフィン変換を行いながら演算合成します。<r/>
+		　指定された重ね合わせ元 Bitmap の矩形を、重ね合わせ先にアフィン変換を行いながら演算合成します。<r/>
 	</desc>
 </member>
 
@@ -286,7 +285,7 @@
 				　描画方式を指定します。<r/>
 				<tt><kw>dfAlpha</kw></tt> が指定された場合は画像はアルファチャンネルつき画像と見なされ、描画されます。<r/>
 				<tt><kw>dfAddAlpha</kw></tt> が指定された場合は画像は加算アルファチャンネルつき画像として見なされ、描画されます。<r/>
-				<tt><kw>dfOpaque</kw></tt> が指定された場合はレイヤの画像はすべて完全不透明であると見なされ、描画されます。<r/>
+				<tt><kw>dfOpaque</kw></tt> が指定された場合は画像はすべて完全不透明であると見なされ、描画されます。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -382,8 +381,8 @@
 				<tt><kw>omLighten</kw></tt> が指定された場合は比較(明)合成が行われます(現バージョンでは未実装です)。<r/>
 				<tt><kw>omScreen</kw></tt> が指定された場合はスクリーン乗算合成が行われます(現バージョンでは未実装です)。<r/>
 				<tt><kw>omAlpha</kw></tt> が指定された場合はアルファ合成が行われます。<r/>
-				<tt><kw>omAddAlpha</kw></tt> が指定された場合は加算アルファ合成が行われます。この場合は、転送先の <ref>Layer.face</ref> プロパティが dfOpaque かつ <ref>Layer.holdAlpha</ref> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
-				<tt><kw>omOpaque</kw></tt> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。この場合は、転送先の <ref>Layer.face</ref> プロパティが dfOpaque かつ <ref>Layer.holdAlpha</ref> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
+				<tt><kw>omAddAlpha</kw></tt> が指定された場合は加算アルファ合成が行われます。この場合は、face が dfOpaque かつ hda が偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
+				<tt><kw>omOpaque</kw></tt> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。この場合は、face が dfOpaque かつ hda が偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -393,7 +392,7 @@
 				　描画方式を指定します。<r/>
 				<tt><kw>dfAlpha</kw></tt> が指定された場合は画像はアルファチャンネルつき画像と見なされ、描画されます。<r/>
 				<tt><kw>dfAddAlpha</kw></tt> が指定された場合は画像は加算アルファチャンネルつき画像として見なされ、描画されます。<r/>
-				<tt><kw>dfOpaque</kw></tt> が指定された場合はレイヤの画像はすべて完全不透明であると見なされ、描画されます。<r/>
+				<tt><kw>dfOpaque</kw></tt> が指定された場合は画像はすべて完全不透明であると見なされ、描画されます。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -689,12 +688,11 @@
 			<desc>
 				　塗りつぶす色や値を指定します。<r/>
 				　この値は、face 引数の値によって意味が変わります。<r/>
-				<tt><kw>dfAlpha</kw> (または<kw>dfBoth</kw>)   </tt> : 0xRRGGBB 形式で色を指定してください<r/>
-				<tt><kw>dfAddAlpha</kw>                   </tt> : 0xRRGGBB 形式で色を指定してください<r/>
-				<tt><kw>dfOpaque</kw> (または<kw>dfMain</kw>)  </tt> : 0xRRGGBB 形式で色を指定してください<r/>
-				<tt><kw>dfMask</kw>                       </tt> : マスク(不透明度)の値 ( 0 ～ 255 ) を指定してください<r/>
-				<tt><kw>dfProvince</kw>                   </tt> : 領域の値 ( 0 ～ 255 ) を指定してください<r/>
-				　dfOpaque を指定した場合は、マスク情報は無視されます(マスク情報が保持されるか破壊されるかは <ref>Layer.holdAlpha</ref> プロパティによります)。また、dfMask を指定した場合は、色の情報はそのままになります。<r/>
+				<tt><kw>dfAlpha</kw>    </tt> : 0xRRGGBB 形式で色を指定してください<r/>
+				<tt><kw>dfAddAlpha</kw> </tt> : 0xRRGGBB 形式で色を指定してください<r/>
+				<tt><kw>dfOpaque</kw>   </tt> : 0xRRGGBB 形式で色を指定してください<r/>
+				<tt><kw>dfMask</kw>     </tt> : マスク(不透明度)の値 ( 0 ～ 255 ) を指定してください<r/>
+				　dfOpaque を指定した場合は、マスク情報は無視されます。また、dfMask を指定した場合は、色の情報はそのままになります。<r/>
 				　dfAlpha の場合でかつ opa が負の場合はこの引数は無視されます。<r/>
 			</desc>
 		</argitem>
@@ -703,9 +701,8 @@
 			<default>255</default>
 			<desc>
 				　塗りつぶす不透明度 ( -255 ～ 0 ～ 255 ) を指定します。<r/>
-				　この引数は、<ref>Layer.face</ref> プロパティの値が dfMask や
-				dfProvince の場合は無視されます ( 常に完全不透明 )。<r/>
-				　負の数の指定は <ref>Layer.face</ref> が dfAlpha の場合のみに有効で、
+				　この引数は、face の値が dfMask や dfProvince の場合は無視されます ( 常に完全不透明 )。<r/>
+				　負の数の指定は face が dfAlpha の場合のみに有効で、
 				この場合は value 引数は無視され、画像から不透明度が取り除かれます (
 				-255 を指定すると矩形は完全に透明になります )。
 			</desc>
@@ -725,7 +722,7 @@
 				　描画方式を指定します。<r/>
 				<tt><kw>dfAlpha</kw></tt> が指定された場合は画像はアルファチャンネルつき画像と見なされ、描画されます。<r/>
 				<tt><kw>dfAddAlpha</kw></tt> が指定された場合は画像は加算アルファチャンネルつき画像として見なされ、描画されます。<r/>
-				<tt><kw>dfOpaque</kw></tt> が指定された場合はレイヤの画像はすべて完全不透明であると見なされ、描画されます。<r/>
+				<tt><kw>dfOpaque</kw></tt> が指定された場合は画像はすべて完全不透明であると見なされ、描画されます。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -789,7 +786,7 @@
 			<default>255</default>
 			<desc>
 				　描画する文字の不透明度 ( -255 ～ 0 ～ 255 ) を指定します。<r/>
-				　負の数の指定は <ref>Layer.face</ref> が dfAlpha の場合のみに有効で、
+				　負の数の指定は face が dfAlpha の場合のみに有効で、
 				この場合は文字の形に不透明度が取り除かれる事になります ( 値が小さいほど
 				効果が大きくなります )。<r/>
 			</desc>
@@ -809,7 +806,7 @@
 				　描画方式を指定します。<r/>
 				<tt><kw>dfAlpha</kw></tt> が指定された場合は画像はアルファチャンネルつき画像と見なされ、描画されます。<r/>
 				<tt><kw>dfAddAlpha</kw></tt> が指定された場合は画像は加算アルファチャンネルつき画像として見なされ、描画されます。<r/>
-				<tt><kw>dfOpaque</kw></tt> が指定された場合はレイヤの画像はすべて完全不透明であると見なされ、描画されます。<r/>
+				<tt><kw>dfOpaque</kw></tt> が指定された場合は画像はすべて完全不透明であると見なされ、描画されます。<r/>
 			</desc>
 		</argitem>
 		<argitem>
@@ -891,7 +888,7 @@
 			<desc>
 				　塗りつぶす色や値を指定します。<r/>
 				　この値は、isalpha の値によって意味が変わります。<r/>
-				<tt><kw>true</kw> </tt> : 0xAARRGGBB 形式で不透明度と色を指定してください。メインとマスクの両方が塗りつぶされます。<r/>
+				<tt><kw>true</kw>  </tt> : 0xAARRGGBB 形式で不透明度と色を指定してください。メインとマスクの両方が塗りつぶされます。<r/>
 				<tt><kw>false</kw> </tt> : 0xRRGGBB 形式で色を指定してください。<r/>
 			</desc>
 		</argitem>
