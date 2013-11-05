@@ -364,12 +364,16 @@ sub getdata
 
 sub member
 {
-	my($node) = @_;
+	my($node,$index) = @_;
 	my @list;
 	my $first;
 	my($name) = sjis(($node->getElementsByTagName("name"))[0]->getFirstChild->getData);
+	my $linkname = $name;
+	if( defined $index ) {
+		$linkname .= "_".$index;
+	}
 
-	$outfile = 'f_'.$curtitle.'_'.$name.".html";
+	$outfile = 'f_'.$curtitle.'_'.$linkname.".html";
 
 	$curplace = $curtitle . '.' . $name;
 
@@ -377,7 +381,9 @@ sub member
 
 	&write_html_header($name . ' - ' . getdata($node, 'shortdesc'), $orgfile, "f_${curtitle}.html", "$curtitleクラス");
 
-	push @keywords, $name . "\t". "top". "\t". $outfile ."\t". $curtitle . "クラス";
+	if( !defined $index ) {
+		push @keywords, $name . "\t". "top". "\t". $outfile ."\t". $curtitle . "クラス";
+	}
 
 	&write_paragraph_header('<span class="fheader">' . "<a name=\"". "top" . "\" id=\"". "top" . "\">".$curtitle . '.' . $name . '</a></span>');
 
@@ -607,9 +613,15 @@ EOF
 	}
 	else
 	{
+		my $index = 0;
 		foreach my $member (@names)
 		{
-			print OH "<a class=\"jump\" href=\"f_". $curtitle.'_'.$member.".html\">$member</a><br />\n";
+			my $linkname = $member;
+			if( $index > 0 ) {
+				$linkname .= "_".$index;
+			}
+			print OH "<a class=\"jump\" href=\"f_". $curtitle.'_'.$linkname.".html\">$member</a><br />\n";
+			$index++;
 		}
 	}
 
@@ -729,9 +741,21 @@ EOF
 
 	;# create each member description
 
+	my $constindex = -1;
+	my $isconstructor;
 	foreach my $member (@members)
 	{
-		&member($member);
+		if(sjis(($member->getElementsByTagName("type"))[0]->getFirstChild->getData) eq "constructor") {
+			$constindex++;
+			$isconstructor = 1;
+		} else {
+			$isconstructor = 0;
+		}
+		if( $isconstructor == 1 && $constindex > 0 ) {
+			&member($member,$constindex);
+		} else {
+			&member($member);
+		}
 	}
 
 }

@@ -11,8 +11,6 @@ atmExclusive	id4	f_AsyncTrigger_mode.html	AsyncTrigger.mode
 atmAtIdle	id5	f_AsyncTrigger_mode.html	AsyncTrigger.mode
 Bitmapクラス概要	top	f_Bitmap.html	Bitmapクラス
 Bitmap	top	f_Bitmap_Bitmap.html	Bitmapクラス
-Bitmap	top	f_Bitmap_Bitmap.html	Bitmapクラス
-Bitmap	top	f_Bitmap_Bitmap.html	Bitmapクラス
 onLoaded	top	f_Bitmap_onLoaded.html	Bitmapクラス
 getPixel	top	f_Bitmap_getPixel.html	Bitmapクラス
 setPixel	top	f_Bitmap_setPixel.html	Bitmapクラス
@@ -619,8 +617,6 @@ link	top	f_Plugins_link.html	Pluginsクラス
 unlink	top	f_Plugins_unlink.html	Pluginsクラス
 getList	top	f_Plugins_getList.html	Pluginsクラス
 Rectクラス概要	top	f_Rect.html	Rectクラス
-Rect	top	f_Rect_Rect.html	Rectクラス
-Rect	top	f_Rect_Rect.html	Rectクラス
 Rect	top	f_Rect_Rect.html	Rectクラス
 setSize	top	f_Rect_setSize.html	Rectクラス
 setOffset	top	f_Rect_setOffset.html	Rectクラス
